@@ -20,42 +20,33 @@ from sklearn.metrics import (
     f1_score,
     ConfusionMatrixDisplay,
     roc_curve,
-    auc,
-)
+    auc,)
 from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
-
+PROJECT = Path("")
 INPUT = PROJECT / "predictions/features.csv"
-
 OUTPUT = PROJECT / "classifier_svm"
 OUTPUT.mkdir(parents=True, exist_ok=True)
-
 MODEL_FILE = OUTPUT / "svm.pkl"
 
 df = pd.read_csv(INPUT)
-
 X = df.drop(columns=["video", "label"])
-
 y = df["label"].map({
     "Healthy": 0,
-    "Lame": 1,
-})
+    "Lame": 1,})
 
 feature_names = X.columns
-
 X = X.values
 y = y.values
 
 cv = StratifiedKFold(
     n_splits=5,
     shuffle=True,
-    random_state=42,
-)
+    random_state=42,)
 
 pipeline = Pipeline([
     ("scaler", StandardScaler()),
@@ -64,9 +55,7 @@ pipeline = Pipeline([
         C=1.0,
         gamma="scale",
         probability=True,
-        random_state=42,
-    )),
-])
+        random_state=42,)),])
 
 accuracies = []
 precisions = []
@@ -81,7 +70,7 @@ fold = 1
 
 for train_idx, test_idx in cv.split(X, y):
 
-    print(f"\n========== Fold {fold} ==========\n")
+    print(f"\n Fold {fold} \n")
 
     X_train = X[train_idx]
     X_test = X[test_idx]
@@ -139,7 +128,7 @@ for train_idx, test_idx in cv.split(X, y):
 
     fold += 1
 
-print("\n========== Cross validation results ==========\n")
+print("\n Cross validation results \n")
 
 print(f"Accuracy : {np.mean(accuracies):.3f} ± {np.std(accuracies):.3f}")
 print(f"Precision: {np.mean(precisions):.3f} ± {np.std(precisions):.3f}")
