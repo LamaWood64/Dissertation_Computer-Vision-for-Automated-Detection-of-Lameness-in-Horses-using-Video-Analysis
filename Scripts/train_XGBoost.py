@@ -25,7 +25,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import StratifiedKFold
 
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 
 INPUT = PROJECT / "predictions/features.csv"
 
