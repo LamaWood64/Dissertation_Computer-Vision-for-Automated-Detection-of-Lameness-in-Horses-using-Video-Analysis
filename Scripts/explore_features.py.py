@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import ttest_ind
 
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 
 INPUT = PROJECT / "predictions/features.csv"
 
@@ -57,9 +57,7 @@ print(features.describe())
 
 variance = features.var().sort_values(ascending=False)
 
-variance.to_csv(
-    OUTPUT / "feature_variance.csv"
-)
+variance.to_csv(OUTPUT / "feature_variance.csv")
 
 
 plt.figure(figsize=(12, 6))
@@ -72,8 +70,7 @@ plt.tight_layout()
 
 plt.savefig(
     OUTPUT / "top20_variance.png",
-    dpi=300
-)
+    dpi=300)
 
 plt.close()
 
@@ -97,10 +94,7 @@ plt.close()
 
 
 healthy = df[df.label == "Healthy"]
-
 lame = df[df.label == "Lame"]
-
-
 results = []
 
 
