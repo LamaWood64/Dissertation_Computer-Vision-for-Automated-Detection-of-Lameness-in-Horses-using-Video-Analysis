@@ -10,27 +10,16 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# =============================================================================
-# Paths
-# =============================================================================
-
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 
 PEAKS_FILE = PROJECT / "predictions/test_peaks.csv"
 
 OUTPUT_FILE = PROJECT / "predictions/gait_features.csv"
 
-FPS = 30  # change if your videos use another frame rate
-
-# =============================================================================
-# Load
-# =============================================================================
+FPS = 30  # change if ur videos use another rate
 
 peaks = pd.read_csv(PEAKS_FILE)
 
-# =============================================================================
-# Hooves
-# =============================================================================
 
 HOOFS = [
     "lf_hoof",
@@ -41,9 +30,6 @@ HOOFS = [
 
 features = []
 
-# =============================================================================
-# Process each hoof
-# =============================================================================
 
 for hoof in HOOFS:
 
@@ -64,9 +50,6 @@ for hoof in HOOFS:
     step_durations = []
     amplitudes = []
 
-    # -------------------------------------------------------------
-    # Each gait cycle = Peak -> Valley -> Peak
-    # -------------------------------------------------------------
 
     for i in range(len(maxima) - 1):
 
@@ -122,10 +105,6 @@ for hoof in HOOFS:
             np.min(amplitudes) if len(amplitudes) else np.nan,
 
     })
-
-# =============================================================================
-# Save
-# =============================================================================
 
 features = pd.DataFrame(features)
 
