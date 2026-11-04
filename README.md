@@ -1,7 +1,5 @@
 # Computer Vision for Automated Detection of Lameness in Horses using Video Analysis
 
-A computer vision and machine learning pipeline for the preliminary detection of lameness in horses using ordinary video recordings.
-
 This project was developed as part of my Bachelor's dissertation in Computer Science at BSBI, in partnership with the University for the Creative Arts (UCA).
 
 The system combines markerless animal pose estimation, biomechanical feature extraction, and machine learning classification to investigate whether gait abnormalities can be identified automatically from video data without specialized sensors or motion-capture equipment.
