@@ -12,7 +12,7 @@ import pandas as pd
 from ultralytics import YOLO
 
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 
 MODEL = PROJECT / "runs/horse_pose_12kp/weights/best.pt"
 
