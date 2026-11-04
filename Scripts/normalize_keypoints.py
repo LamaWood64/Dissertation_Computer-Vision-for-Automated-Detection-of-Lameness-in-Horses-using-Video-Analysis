@@ -9,7 +9,7 @@ Created on Fri Jul 31 15:42:46 2026
 from pathlib import Path
 import pandas as pd
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 
 INPUT_DIR = PROJECT / "predictions/keypoints"
 OUTPUT_DIR = PROJECT / "predictions/normalized"
