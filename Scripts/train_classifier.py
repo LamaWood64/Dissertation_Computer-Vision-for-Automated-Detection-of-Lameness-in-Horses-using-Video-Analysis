@@ -25,15 +25,11 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.feature_selection import SelectFromModel
 
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
-
+PROJECT = Path("")
 INPUT = PROJECT / "predictions/features.csv"
-
 OUTPUT = PROJECT / "classifier"
 OUTPUT.mkdir(parents=True, exist_ok=True)
-
 MODEL_FILE = OUTPUT / "random_forest.pkl"
-
 TOP_FEATURES = 20
 
 df = pd.read_csv(INPUT)
