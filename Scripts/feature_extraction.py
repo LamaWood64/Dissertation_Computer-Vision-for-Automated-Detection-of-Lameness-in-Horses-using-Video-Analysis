@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 INPUT_DIR = PROJECT / "predictions/smoothed"
 OUTPUT_FILE = PROJECT / "predictions/features.csv"
 KEYPOINTS = [
@@ -28,9 +28,6 @@ KEYPOINTS = [
     "rh_hoof",]
 
 def extract_features(signal: pd.Series) -> dict:
-    """
-    Extract statistical and motion features from one time series.
-    """
 
     signal = signal.dropna().to_numpy(dtype=float)
 
