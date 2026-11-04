@@ -9,7 +9,7 @@ Created on Thu Jul 30 16:28:23 2026
 from pathlib import Path
 from ultralytics import YOLO
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("/")
 
 MODEL = PROJECT / "runs/horse_pose_12kp/weights/best.pt"
 VIDEO = PROJECT / "videos/test1.mp4"
