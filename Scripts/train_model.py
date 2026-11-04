@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jul 29 20:41:28 2026
+Created on Wed Jul 29 2026
 
 @author: anastasia
 """
 
 from ultralytics import YOLO
 
-PROJECT = "/Users/anastasia/Desktop/HorseLamenessProject"
+PROJECT = ""
 
 model = YOLO("yolo11n-pose.pt")
 
