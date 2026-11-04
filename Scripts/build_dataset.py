@@ -9,7 +9,7 @@ Created on Wed Jul 29 20:02:52 2026
 import shutil
 from pathlib import Path
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("")
 OUTPUT = PROJECT / "dataset"
 
 NUM_KEYPOINTS = 12
