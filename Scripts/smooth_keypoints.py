@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
 from scipy.signal import savgol_filter
 
-PROJECT = Path("/Users/anastasia/Desktop/HorseLamenessProject")
+PROJECT = Path("/")
 
 INPUT_DIR = PROJECT / "predictions/normalized"
 OUTPUT_DIR = PROJECT / "predictions/smoothed"
@@ -31,8 +31,7 @@ KEYPOINTS = [
     "withers",
     "pelvis",
     "neck",
-    "nose",
-]
+    "nose",]
 
 files = sorted(INPUT_DIR.glob("*_keypoints_normalized.csv"))
 
